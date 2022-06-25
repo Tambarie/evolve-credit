@@ -46,6 +46,11 @@ func initializeRouter() *gin.Engine {
 }
 
 func DefineRouter(router *gin.Engine, handler *handler.Handler) {
-	//apiRouter := router.Group("/api/v1")
+	apiRouter := router.Group("/api/v1")
+	apiRouter.POST("/createUser", handler.CreateUser())
+	apiRouter.PUT("/updateUser", handler.UpdateUser())
+	apiRouter.GET("/user", handler.GetUerByEmail())
+	apiRouter.GET("/getUserByDate/:first/:second", handler.GetUserByDateRange())
+	apiRouter.GET("/getAllUsers", handler.GetAllUsers())
 
 }
