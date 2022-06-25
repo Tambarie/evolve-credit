@@ -46,6 +46,8 @@ func initializeRouter() *gin.Engine {
 }
 
 func DefineRouter(router *gin.Engine, handler *handler.Handler) {
+
+	router.GET("/", handler.CheckHealth())
 	apiRouter := router.Group("/api/v1")
 	apiRouter.POST("/createUser", handler.CreateUser())
 	apiRouter.PUT("/updateUser", handler.UpdateUser())
