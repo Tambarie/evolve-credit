@@ -38,13 +38,14 @@ touch .env
 ```
 All the variables used within the project can now be added within the ``.env`` file in the following format:
 ```
-SERVICE_MODE="dev"
-DB_TYPE = "mongodb"
-MONGO_DB_HOST="localhost"
-MONGO_DB_NAME="payment-gateway"
-MONGO_DB_PORT="27017"
-SERVICE_PORT=8080
-DB_PASS=<your db password>
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_NAME=evolve-credit
+DB_PASS=********
+DB_TIMEZONE=Africa/lagos
+DB_MODE=disable
+PORT=8080
 ```
 
 
