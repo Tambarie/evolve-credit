@@ -21,7 +21,7 @@ func Init() *gorm.DB {
 	DBTimeZone := os.Getenv("DB_TIMEZONE")
 	DBMode := os.Getenv("DB_MODE")
 	var dsn string
-	databaseUrl := os.Getenv("DATABASE_URL")
+	databaseUrl := os.Getenv("URI")
 	if databaseUrl == "" {
 		dsn = fmt.Sprintf("host=%v user=%v password=%v dbname=%v port=%v sslmode=%v TimeZone=%v", DBHost, DBUser, DBPass, DBName, DBPort, DBMode, DBTimeZone)
 	} else {
