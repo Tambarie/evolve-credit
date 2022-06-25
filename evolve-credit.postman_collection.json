@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "d61f8901-f74a-4fa9-a2d1-e8f27236d013",
+		"name": "evolve-credit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9211697"
+	},
+	"item": [
+		{
+			"name": "create-user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getuser",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "updateuser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"id\": \"43a1aa67-a501-418a-94a5-8e157d200c64\",\n            \"first_name\": \"Gbaragbo\",\n            \"last_name\": \"Queeneth\",\n            \"email\": \"etiam.laoreet@yahoo.ca\",\n            \"date_of_birth\": \"Jan 12 1992\"\n            \n}\n            ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/updateUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"updateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserByDateRange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/getUserByDate/:first/:second",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"getUserByDate",
+						":first",
+						":second"
+					],
+					"variable": [
+						{
+							"key": "first",
+							"value": "2000-01-01 00:00:00"
+						},
+						{
+							"key": "second",
+							"value": "2009-01-01 00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
