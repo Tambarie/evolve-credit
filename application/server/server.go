@@ -22,7 +22,7 @@ func Start() {
 		UserService: service.NewUserService(userRepo.NewUserRepositoryDB(db)),
 	}
 	DefineRouter(router, &h)
-	PORT := fmt.Sprintf(":%s", os.Getenv("service_port"))
+	PORT := fmt.Sprintf(":%s", os.Getenv("PORT"))
 	if PORT == ":" {
 		PORT += "8080"
 	}
