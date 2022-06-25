@@ -2,6 +2,7 @@ package postgresDB
 
 import (
 	"fmt"
+	"github.com/Tambarie/evolve-credit/domain/models"
 	_ "github.com/lib/pq"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -30,6 +31,12 @@ func Init() *gorm.DB {
 	if err != nil {
 		log.Fatalf("failed to connect database: %v", err)
 	}
+
+	err = db.AutoMigrate(&models.User{})
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	log.Println("Database Connected Successfully...")
 	return db
 }
